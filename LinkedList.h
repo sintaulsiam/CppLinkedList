@@ -8,10 +8,17 @@ class LinkedList
 private:
     Node *head;
     Node *tail;
+    void nodeDeleter(Node *node);
+    bool isEmplty();
 
 public:
     LinkedList();
     ~LinkedList();
+    void add_to_last(int data);
+    void add_to_first(int data);
+    int indexOf(int data);
+    bool contains(int data);
+    void removeFirst();
 };
 
 #endif

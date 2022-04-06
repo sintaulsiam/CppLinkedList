@@ -1,5 +1,4 @@
 #include "LinkedList.h"
-#include <iostream>
 
 LinkedList::LinkedList() : head(nullptr), tail(nullptr), size(0)
 {
@@ -94,6 +93,7 @@ void LinkedList::removeFirst()
         delete head;
         this->head = this->tail = nullptr;
         size--;
+        return;
     }
     Node *temp = this->head->next;
     delete this->head;
@@ -121,7 +121,6 @@ void LinkedList::removeLast()
         previous->next = nullptr;
         this->tail = previous;
         size--;
-        std::cout << "The data is" << tail->next << std::endl;
     }
 }
 

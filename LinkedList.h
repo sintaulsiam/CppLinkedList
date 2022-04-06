@@ -10,6 +10,7 @@ private:
     Node *tail;
     void nodeDeleter(Node *node);
     bool isEmplty();
+    Node *getPrevious(Node *node);
 
 public:
     LinkedList();
@@ -19,6 +20,7 @@ public:
     int indexOf(int data);
     bool contains(int data);
     void removeFirst();
+    void removeLast();
 };
 
 #endif

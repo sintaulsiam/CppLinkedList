@@ -96,3 +96,28 @@ void LinkedList::removeFirst()
     delete head;
     head = temp;
 }
+
+void LinkedList::removeLast()
+{
+    auto previous = getPrevious(this->tail);
+    if (previous)
+    {
+        delete previous->next;
+        previous->next = nullptr;
+        this->tail = previous;
+
+        std::cout << "The data is" << tail->next << std::endl;
+    }
+}
+
+Node *LinkedList::getPrevious(Node *node)
+{
+    auto current = this->head;
+    while (current)
+    {
+        if (current->next == node)
+            return current;
+        current = current->next;
+    }
+    return nullptr;
+}

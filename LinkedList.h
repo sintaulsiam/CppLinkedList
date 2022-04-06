@@ -8,6 +8,7 @@ class LinkedList
 private:
     Node *head;
     Node *tail;
+    int size;
     void nodeDeleter(Node *node);
     bool isEmplty();
     Node *getPrevious(Node *node);
@@ -21,6 +22,7 @@ public:
     bool contains(int data);
     void removeFirst();
     void removeLast();
+    int getSize();
 };
 
 #endif

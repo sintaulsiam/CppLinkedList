@@ -1,7 +1,7 @@
 #include "LinkedList.h"
 #include <iostream>
 
-LinkedList::LinkedList() : head(nullptr), tail(nullptr)
+LinkedList::LinkedList() : head(nullptr), tail(nullptr), size(0)
 {
 }
 
@@ -39,6 +39,7 @@ void LinkedList::add_to_last(int data)
         this->tail = node;
     }
     node = nullptr;
+    size++;
 }
 
 void LinkedList::add_to_first(int data)
@@ -54,6 +55,7 @@ void LinkedList::add_to_first(int data)
         head = node;
     }
     node = nullptr;
+    size++;
 }
 
 bool LinkedList::isEmplty()
@@ -95,6 +97,7 @@ void LinkedList::removeFirst()
     Node *temp = head->next;
     delete head;
     head = temp;
+    size--;
 }
 
 void LinkedList::removeLast()
@@ -105,7 +108,7 @@ void LinkedList::removeLast()
         delete previous->next;
         previous->next = nullptr;
         this->tail = previous;
-
+        size--;
         std::cout << "The data is" << tail->next << std::endl;
     }
 }
@@ -120,4 +123,9 @@ Node *LinkedList::getPrevious(Node *node)
         current = current->next;
     }
     return nullptr;
+}
+
+int LinkedList::getSize()
+{
+    return this->size;
 }

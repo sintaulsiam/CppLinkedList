@@ -89,19 +89,31 @@ void LinkedList::removeFirst()
 {
     if (this->isEmplty())
         return;
-    if (head == tail)
+    if (this->head == this->tail)
     {
         delete head;
-        tail->next = nullptr;
+        this->head = this->tail = nullptr;
+        size--;
     }
-    Node *temp = head->next;
-    delete head;
-    head = temp;
+    Node *temp = this->head->next;
+    delete this->head;
+    this->head = temp;
     size--;
 }
 
 void LinkedList::removeLast()
 {
+    if (isEmplty())
+        return;
+
+    if (this->head == this->tail)
+    {
+        delete this->head;
+        this->head = this->tail = nullptr;
+        size--;
+        return;
+    }
+
     auto previous = getPrevious(this->tail);
     if (previous)
     {

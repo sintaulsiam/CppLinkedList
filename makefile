@@ -2,18 +2,18 @@ CC=g++
 CFLAGS= -Wall -g
 
 
-all=main.o LinkedList.o Node.o
+all=main.o src/LinkedList.o src/Node.o
 linkedlist: ${all}
-	${CC} ${CFLAGS} main.o LinkedList.o Node.o -o linkedlist
+	${CC} ${CFLAGS} main.o src/LinkedList.o src/Node.o -o linkedlist
 
-main.o: main.cpp LinkedList.h LinkedList.cpp
+main.o: main.cpp src/LinkedList.h src/LinkedList.cpp
 	${CC} ${CFLAGS} -c main.cpp 
 
-Node.o: Node.cpp Node.h LinkedList.h  LinkedList.cpp
-	${CC} ${CFLAGS} -c  Node.cpp
+Node.o: src/Node.cpp src/Node.h src/LinkedList.h  src/LinkedList.cpp
+	${CC} ${CFLAGS} -c  src/Node.cpp
 
-LinkedList: LinkedList.cpp LinkedList.h Node.h Node.cpp
-	${CC} ${CFLAGS} -c linkedlist.cpp
+LinkedList: src/LinkedList.cpp src/LinkedList.h src/Node.h src/Node.cpp
+	${CC} ${CFLAGS} -c src/linkedlist.cpp
 
 clean: 
 	rm ${all}

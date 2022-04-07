@@ -23,6 +23,7 @@ public:
     void removeFirst();
     void removeLast();
     int getSize();
+    int *toArry();
 };
 
 #endif

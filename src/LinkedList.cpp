@@ -140,3 +140,17 @@ int LinkedList::getSize()
 {
     return this->size;
 }
+
+int *LinkedList::toArry()
+{
+    int *arr = new int[this->size];
+    int i = 0;
+    auto current = this->head;
+    while (current)
+    {
+        arr[i] = current->data;
+        i++;
+        current = current->next;
+    }
+    return arr;
+}

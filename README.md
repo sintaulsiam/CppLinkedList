@@ -1,7 +1,6 @@
 # MyLinkedList
 
 this is a implementation of linked list in CPP. I did it for learning purpose.
-`
 
 ## Usage
 

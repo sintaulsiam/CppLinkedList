@@ -24,6 +24,7 @@ public:
     void removeLast();
     int getSize();
     int *toArry();
+    void reverse();
 };
 
 #endif

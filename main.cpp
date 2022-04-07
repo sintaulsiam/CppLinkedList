@@ -5,8 +5,9 @@ int main(void)
 {
     LinkedList data;
     data.add_to_first(4);
-    data.add_to_first(7);
-    data.add_to_first(6);
+    data.add_to_last(7);
+    data.add_to_last(6);
+    data.reverse();
 
     int *arry = data.toArry();
 

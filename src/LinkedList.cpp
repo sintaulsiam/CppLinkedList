@@ -154,3 +154,20 @@ int *LinkedList::toArry()
     }
     return arr;
 }
+
+void LinkedList::reverse()
+{
+    auto previous = this->head;
+    auto current = this->head->next;
+    this->tail = this->head;
+    tail->next = nullptr;
+
+    while (current)
+    {
+        auto next = current->next;
+        current->next = previous;
+        previous = current;
+        current = next;
+    }
+    this->head = previous;
+}
